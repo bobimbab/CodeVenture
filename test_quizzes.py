@@ -42,7 +42,9 @@ def test_choose_difficulty_hard(mock_input):
 
 # Corrected test cases for validate_ans
 def test_validate_ans_correct():
-    quiz = Quizzes(quiz1_ans_easy, [], [], [], [], [])
+    quiz = Quizzes(quiz1_ans_easy, [],
+                   [], [],
+                   [], [])
     assert quiz.validate_ans("50", quiz1_ans_easy, 0) is True
 
 # Negative testing
@@ -57,16 +59,22 @@ def test_choose_difficulty_non_integer_input(mock_input):
     assert result == "Medium"
 
 def test_validate_ans_incorrect():
-    quiz = Quizzes(quiz1_ans_easy, [], [], [], [], [])
+    quiz = Quizzes(quiz1_ans_easy, [],
+                   [], [],
+                   [], [])
     assert quiz.validate_ans("42", quiz1_ans_easy, 0) is False
 
 def test_validate_ans_out_of_index():
-    quiz = Quizzes(quiz1_ans_easy, [], [], [], [], [])
+    quiz = Quizzes(quiz1_ans_easy, [],
+                   [], [],
+                   [], [])
     assert quiz.validate_ans("50", quiz1_ans_easy, 1) is False
 
 # Test with non-numeric answers
 def test_validate_ans_non_numeric():
-    quiz = Quizzes(quiz1_ans_easy, [], [], [], [], [])
+    quiz = Quizzes(quiz1_ans_easy, [],
+                   [], [],
+                   [], [])
     assert quiz.validate_ans("apple", quiz1_ans_easy, 0) is False
 
 if __name__ == "__main__":
